@@ -1,0 +1,11 @@
+name = "TexasHoldem"
+uuid = "32f29896-28fe-43aa-a8e3-67588086f50c"
+authors = ["math4mad <smartfamilycn@qq.com>"]
+version = "0.1.0"
+
+[deps]
+Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Pipe = "b98c9c47-44ae-5843-9183-064241ee97a0"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
