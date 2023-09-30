@@ -21,7 +21,7 @@ end
 ```
 
 ### 1. royal_flush_cond
-   ```julia
+```julia
     """
                 royal_flush_cond(arr::Array)::Bool
                 皇家 flush 的条件
@@ -41,7 +41,7 @@ end
 
 
 ### 2. straight_flush_cond
-    ```julia
+```julia
     """
     straight_flush_cond(arr::Array)
 
@@ -54,9 +54,9 @@ end
         bool_nums = nums == Vector(nums[1]:1:nums[end])||(nums==[2:5...,14])
         return bool_suits&& bool_nums
     end
-    ```
-### 3. four_kind_cond
-    ```julia
+```
+   ###  3. four_kind_cond
+```julia
     "Four of a Kind  四张同点数, 一张不同"
     function four_kind_cond(arr::Array)::Bool
         nums,_=get_card_faces(arr)  
@@ -70,9 +70,9 @@ end
         return res
 
     end
-    ```
+```
 ### 4. full_house_cond
-    ```julia
+```julia
     """
     五张牌, 三张点数一样, 两张点数一样
     """
@@ -83,9 +83,9 @@ end
         return (lev[1]==3)&&(lev[2]==2)
     end
 
-    ```
+```
 ### 5.  flush_cond
-    ```julia
+```julia
     """
         flush_cond(arr::Array)
 
@@ -109,7 +109,7 @@ end
 ```
 
 ### 6. straight_cond
-    ```julia
+```julia
     """
         straight_cond(arr::Array)::Bool
 
@@ -136,37 +136,37 @@ end
 ### 8. two-pairs
 
 ```julia
-function two_pairs_cond(arr::Array)::Bool
-    nums,_=get_card_faces(arr)  
-    lev= counts(nums)|>d->sort!(d;rev=true)
-    return  (lev[1]==2)&&(lev[2]==2)&&(lev[3]==1)
-end
+    function two_pairs_cond(arr::Array)::Bool
+        nums,_=get_card_faces(arr)  
+        lev= counts(nums)|>d->sort!(d;rev=true)
+        return  (lev[1]==2)&&(lev[2]==2)&&(lev[3]==1)
+    end
 ```
 
 
 ### 9.  one-pairs
 ```julia
-function one_pairs_cond(arr::Array)
-    nums,_=get_card_faces(arr)  
-    #lev= counts(nums)|>d->sort!(d;rev=true)
-    len=levels(nums)|>length
-    #return  (lev[1]==2)&&(lev[2]==1)&&(lev[3]==1)&&(lev[4]==1)
-    return len==4
-    
+    function one_pairs_cond(arr::Array)
+        nums,_=get_card_faces(arr)  
+        #lev= counts(nums)|>d->sort!(d;rev=true)
+        len=levels(nums)|>length
+        #return  (lev[1]==2)&&(lev[2]==1)&&(lev[3]==1)&&(lev[4]==1)
+        return len==4
+        
 
-end
+    end
 ```
 
 
 ### 10. nothing_cond
 ```julia
-function nothing_cond(arr::Array)
-    nums,suits=get_card_faces(arr) 
-    sort!(nums) 
-    suit_len=levels(suits)|>length
-    num_len=levels(nums)|>length
-    return (suit_len>1)&&(num_len==5)&&(nums≠([nums[1]:nums[end]...])&&(nums≠[2:5...,14]))
-end
+    function nothing_cond(arr::Array)
+        nums,suits=get_card_faces(arr) 
+        sort!(nums) 
+        suit_len=levels(suits)|>length
+        num_len=levels(nums)|>length
+        return (suit_len>1)&&(num_len==5)&&(nums≠([nums[1]:nums[end]...])&&(nums≠[2:5...,14]))
+    end
 ```
 
 
