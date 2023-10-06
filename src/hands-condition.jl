@@ -2,7 +2,7 @@ using DataFrames,StatsBase
 
 
 
-"""
+#= """
     get_card_faces(arr::Array)::Tuple{Vector{Int},Vector{AbstractString}}
     
     从数组获得牌面的点数和suits
@@ -15,7 +15,7 @@ function get_card_faces(arr::Array)::Tuple{Vector{Int},Vector{AbstractString}}
         suits[idx]=arr[idx][1]
     end  
     return (nums,suits)
-end
+end =#
 
 
 ### 1. royal_flush_cond

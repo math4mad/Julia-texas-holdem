@@ -1,14 +1,13 @@
 #= 
   全部条件已经修正, 测试全部通过
 =#
-using .TexasHoldem
-using Test
+
 
 include("../src/TexasHoldem.jl")
-include("../src/utils.jl")
+
 using .TexasHoldem
 using Test
-total_space,total_size=texa_holdm
+total_space,total_size,_=texas_holdem
 
 """
     holdem_test()
